@@ -1,0 +1,33 @@
+// Last updated: 7/12/2026, 6:34:35 PM
+import java.util.Stack;
+
+class Solution {
+    public int evalRPN(String[] tokens) {
+        Stack<Integer> stack = new Stack<>();
+
+        for (String token : tokens) {
+            if (token.equals("+")) {
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a + b);
+            } else if (token.equals("-")) {
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a - b);
+            } else if (token.equals("*")) {
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a * b);
+            } else if (token.equals("/")) {
+                int b = stack.pop();
+                int a = stack.pop();
+                stack.push(a / b); // integer division, truncates toward 0
+            } else {
+                // It's a number
+                stack.push(Integer.parseInt(token));
+            }
+        }
+
+        return stack.pop();
+    }
+}
