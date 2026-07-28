@@ -1,12 +1,13 @@
-// Last updated: 7/12/2026, 6:34:27 PM
-class Solution {
-    public String convertToTitle(int columnNumber) {
-    StringBuilder sb = new StringBuilder();
-    while (columnNumber > 0) {
-        columnNumber--; // to make it 0-indexed
-        sb.append((char) ('A' + columnNumber % 26));
-        columnNumber /= 26;
-    }
-    return sb.reverse().toString();
-}
-}
+// Last updated: 7/28/2026, 11:44:10 AM
+1class Solution {
+2    public String convertToTitle(int c) {
+3    StringBuilder sb = new StringBuilder();
+4    while (c>0) {
+5        c--;
+6        sb.append((char)('A'+c%26));
+7        c/=26;
+8    }
+9    return sb.reverse().toString();
+10}
+11}
+12
